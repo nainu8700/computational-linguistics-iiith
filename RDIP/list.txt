@@ -1,0 +1,13 @@
+List of functionalities that are important in Forming Sentences virtual labs:
+
+1.There should be a option to move to a new sentence.
+
+2. The position of words should change Each time we refresh the page in both english and hindi.
+
+3. Every time when we move to the next sentence the language choosed  should be same as the previous one.
+
+4. In hindi language ,every time  when we click on the button 'check the correctness of sentence'
+the answer is coming correct.
+
+
+ 
