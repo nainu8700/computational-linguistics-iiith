@@ -16,19 +16,20 @@ body{
     transform: translate(-50%, -50%);
 
 }
-#c{
+#s3{
     position: absolute;
    width: 900px;
    top: 55%;
-   left: 68%;
+   left: 48%;
+   padding:10vh;
    transform: translate(-50%, -50%);
    font-size: 20px;
    font-style: italic;
-   color: blue;
+   color: black;
    font-family:  sans-serif;
 
 } 
-#a{
+#s1{
     position: absolute;
     width: 900px;
     top: 30%;
@@ -38,11 +39,11 @@ body{
     color: white;
     font-family:  sans-serif;
 }
-#b{
+#s2{
     position: absolute;
     width: 900px;
     top: 40%;
-    left: 68%;
+    left: 48%;
     transform: translate(-50%, -50%);
     font-size: 20px;
     font-style: italic;

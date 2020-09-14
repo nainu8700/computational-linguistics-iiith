@@ -17,34 +17,75 @@ var hin = [["राम और श्याम बाजार गयें","र
 ["एक लाल किताब वहाँ है","एक लाल किताब है वहाँ","वहाँ है एक लाल किताब","है वहाँ एक लाल किताब"],
 ["एक बड़ी सी किताब वहाँ है","एक बड़ी सी किताब है वहाँ","बड़ी सी एक किताब वहाँ है","बड़ी सी एक किताब है वहाँ","वहाँ है एक बड़ी सी किताब","वहाँ है बड़ी सी एक किताब","है वहाँ एक बड़ी सी किताब","है वहाँ बड़ी सी एक किताब"]];
 
+var cc;
+var bc,r;
+var answers="";
+var j;
 
 
-
+function shuffle(jumbled){
+	var jumble = jumbled.split(" ");
+	var i = jumble.length, temp, randomi;
+	while(0!==i){
+		randomi = Math.floor(Math.random()*i);
+		i -= 1;
+		temp = jumble[i];
+		jumble[i] = jumble[randomi];
+		jumble[randomi] = temp;
+	}
+	return jumble;
+}
 
 
  
 let selection = document.getElementById("selection");
 function show(){
 if (selection.value === "english"){
-                document.getElementById("b").innerHTML = "(select the buttons in proper order)"
-                document.getElementById("a").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words"
+                document.getElementById("s2").innerHTML = "(select the buttons in proper order)"
+                document.getElementById("s1").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words"
   
-
+                var r = Math.floor(Math.random()* eng.length);
+                var jumbled = eng[r][0];
+                var j = shuffle(jumbled);
+                
+                var b ="";
+                var bs = "";
+                for(i=0;i<=j.length-1;i++){
+                    val = j[i];
+                    b = "<button id='btn"+i+"' value='"+val+" onclick='myFunction("+i+")'>"+val+"  </button> ";
+                    bs +=b;
+                   
+                }
+                s3.innerHTML = bs
+                    
             
 
                 
 }
 else if (selection.value === "hindi"){
-                document.getElementById("b").innerHTML = "(select the buttons in proper order)"
-                document.getElementById("a").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words"
+                document.getElementById("s2").innerHTML = "(select the buttons in proper order)"
+                document.getElementById("s1").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words"
  
-              
+                var r = Math.floor(Math.random()* hin.length);
+                var jumbled = hin[r][0];
+                var j = shuffle(jumbled);
+                
+                var b ="";
+                var bs = "";
+                for(i=0;i<=j.length-1;i++){
+                    val = j[i];
+                    b = "<button id='btn"+i+"' value='"+val+"'>"+val+"</button> &nbsp;&nbsp;";
+                    bs +=b;
+                }
+                s3.innerHTML = bs;
+                      
+         
 
                 
 }
 else {
-                document.getElementById("b").innerHTML = ""
-                document.getElementById("a").innerHTML = ""
+                document.getElementById("s2").innerHTML = ""
+                document.getElementById("s1").innerHTML = ""
                 
                 alert("Choose any language")
             }
