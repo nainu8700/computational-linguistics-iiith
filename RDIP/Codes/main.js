@@ -46,10 +46,10 @@ function fs(id,value){
 	finalsentence += value + " ";
 	 document.getElementById("s5").innerHTML = finalsentence;
 	document.getElementById(id).style.display = "none";
-	document.getElementById("s6").innerHTML = "<center><button id='reform'onclick='reformsen()''>Re-form the sentence</button></center>"
+	document.getElementById("s6").innerHTML = "<center><button class='btn btn-primary' id='reform'onclick='reformsen()''>Re-form the sentence</button></center>"
     cc++;
     if(bc==cc){
-		document.getElementById("s7").innerHTML = "<center><button id='correctness' onclick='correctsen()''>Check the correctness</button></center>"
+		document.getElementById("s7").innerHTML = "<center><button  class='btn btn-warning ' id='correctness' onclick='correctsen()''>Check the correctness</button></center>"
     }
    
     
@@ -67,7 +67,7 @@ for(let i=0;i<newArr.length;i++){
     }
 }
 document.getElementById('s9').innerHTML = "WRONG ANSWER";
-document.getElementById("s10").innerHTML = "<center><button id='showansbtn' onclick='getcorrectsen()'>Get Correct Sentence</button></center>"
+document.getElementById("s10").innerHTML = "<center><button class='btn btn-success' id='showansbtn' onclick='getcorrectsen()'>Get Correct Sentence</button></center>"
 }
 
 function getcorrectsen(){
@@ -78,7 +78,7 @@ function getcorrectsen(){
 	
 if (selection.value=='english'){
 		totalanswers = eng[r].length-1;
-		document.getElementById('s10').innerHTML = "<center><button id='showansbtn' onclick='hidesen()''>hide correct answer</button></center>"
+		document.getElementById('s10').innerHTML = "<center><button id='showansbtn'  class='btn btn-success'  onclick='hidesen()''>hide correct answer</button></center>"
 		for(i=0;i<=totalanswers;i++){
 			answers += "<center>"+eng[r][i]+"<br></center>"
 		}
@@ -86,7 +86,7 @@ if (selection.value=='english'){
 	}
     else if(selection.value=='hindi'){
 		totalanswers = hin[r].length-1;
-		document.getElementById('s10').innerHTML = "<center><button id='showansbtn' onclick='hidesen()''>hide correct answer</button></center>"
+		document.getElementById('s10').innerHTML = "<center><button id='showansbtn'   class='btn btn-info' onclick='hidesen()''>hide correct answer</button></center>"
 		for(i=0;i<=totalanswers;i++){
 			answers += "<center>"+hin[r][i]+"<br></center>"
 		}
@@ -98,14 +98,14 @@ if (selection.value=='english'){
 
 
 function hidesen(){
-	document.getElementById('s10').innerHTML = "<center><button id='showansbtn' onclick='toggle()'>Get Answers</button></center>"
+	document.getElementById('s10').innerHTML = "<center><button id='showansbtn' class='btn btn-warning' onclick='toggle()'>Get Answers</button></center>"
 	document.getElementById("correctans").innerHTML = "";
 }
 
 function toggle(){
     while(document.getElementById("correctans").innerHTML ==""){
 	
-		document.getElementById('s10').innerHTML = "<center><button id='showansbtn' onclick='hidesen()'>hide correct answer</button></center>"
+		document.getElementById('s10').innerHTML = "<center><button id='showansbtn' class='btn btn-primary' onclick='hidesen()'>hide correct answer</button></center>"
         document.getElementById("correctans").innerHTML = answers;
 	}
 }

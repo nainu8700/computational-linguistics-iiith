@@ -98,7 +98,7 @@ body{
 #s8{
     position: absolute;
     width: 900px;
-    top: 60%;
+    top: 65%;
     left: 48%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -109,7 +109,7 @@ body{
 #s9{
     position: absolute;
     width: 900px;
-    top: 65%;
+    top: 70%;
     left: 48%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -120,7 +120,7 @@ body{
 #s10{
     position: absolute;
     width: 900px;
-    top: 70%;
+    top: 75%;
     left: 48%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -133,7 +133,7 @@ body{
 #correctans{
     position: absolute;
     width: 900px;
-    top: 90%;
+    top: 95%;
     left: 48%;
     padding:20vh;
     padding:4vh;
