@@ -5,3 +5,47 @@ body{
     background-color:#74B9FF;
     font-family:sans-serif;
 }
+#selection{
+    padding: 3px;
+    border: 2px solid black;
+    width: 200px;
+    font-size: 20px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+#c{
+    position: absolute;
+   width: 900px;
+   top: 55%;
+   left: 68%;
+   transform: translate(-50%, -50%);
+   font-size: 20px;
+   font-style: italic;
+   color: blue;
+   font-family:  sans-serif;
+
+} 
+#a{
+    position: absolute;
+    width: 900px;
+    top: 30%;
+    left: 50%;
+  transform: translate(-50%, -50%);
+    font-size: 23px;
+    color: white;
+    font-family:  sans-serif;
+}
+#b{
+    position: absolute;
+    width: 900px;
+    top: 40%;
+    left: 68%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-style: italic;
+    color: white;
+    font-family:  sans-serif;
+} 
