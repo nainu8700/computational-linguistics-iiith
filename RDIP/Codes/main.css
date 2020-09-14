@@ -94,3 +94,36 @@ body{
     color: black;
     font-family:  sans-serif;
 }
+#s8{
+    position: absolute;
+    width: 900px;
+    top: 85%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-style: italic;
+    color: green;
+    font-family:  sans-serif;
+}
+#s9{
+    position: absolute;
+    width: 900px;
+    top: 90%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-style: italic;
+    color: red;
+    font-family:  sans-serif;
+}
+#s10{
+    position: absolute;
+    width: 900px;
+    top: 95%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-style: italic;
+    color: black;
+    font-family:  sans-serif;
+}
