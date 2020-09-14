@@ -21,6 +21,14 @@ var cc;
 var bc,r;
 var answers="";
 var j;
+let selection = document.getElementById("choose");
+
+
+
+
+
+
+
 
 
 function shuffle(jumbled){
@@ -36,57 +44,125 @@ function shuffle(jumbled){
 	return jumble;
 }
 
+var finalsentence ="";
+function fs(id,value){
+	
+	document.getElementById("s4").innerHTML = "Formed Sentence (after selecting words):";
+	finalsentence += value + " ";
+	 document.getElementById("s5").innerHTML = finalsentence;
+	document.getElementById(id).style.display = "none";
+	document.getElementById("s6").innerHTML = "<center><button id='reform''>Re-form the sentence</button></center>"
+    cc++;
+   
+    
+}
 
- 
-let selection = document.getElementById("selection");
-function show(){
+//reset option
+function rs(){
+    for(i=0;i<=j.length-1;i++){
+		document.getElementById('btn'+i).style.display = "";
+	}
+  finalsentence = "";
+    
+	document.getElementById("s5").innerHTML = "";
+		document.getElementById("correctans").innerHTML = "";
+    document.getElementById("s7").innerHTML="";
+    document.getElementById("s6").innerHTML ="";
+    document.getElementById('s10').innerHTML="";
+	document.getElementById("s4").innerHTML = "";
+    document.getElementById("s8").innerHTML = "";
+    document.getElementById("s9").innerHTML = "";
+    cc=0;
+}
+
+
+
+
+
+function run(){
 if (selection.value === "english"){
+    
+                answers="";
+                document.getElementById("correctans").innerHTML = ""
+                
+                finalsentence = "";
+                document.getElementById("s4").innerHTML = "";
+    document.getElementById("s5").innerHTML = "";
+    document.getElementById("s6").innerHTML = "";
+    document.getElementById("s7").innerHTML = "";
+    document.getElementById("s8").innerHTML = "";
+    document.getElementById("s9").innerHTML = "";
+    document.getElementById("s10").innerHTML = "";
+    
                 document.getElementById("s2").innerHTML = "(select the buttons in proper order)"
                 document.getElementById("s1").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words"
-  
-                var r = Math.floor(Math.random()* eng.length);
-                var jumbled = eng[r][0];
-                var j = shuffle(jumbled);
-                
-                var b ="";
-                var bs = "";
-                for(i=0;i<=j.length-1;i++){
-                    val = j[i];
-                    b = "<button id='btn"+i+"' value='"+val+" onclick='myFunction("+i+")'>"+val+"  </button> ";
-                    bs +=b;
-                   
-                }
-                s3.innerHTML = bs
-                    
             
-
+ r = Math.floor(Math.random()* eng.length);
+		var jumbled = eng[r][0];
+		j = shuffle(jumbled);
+		bc=0;
+    cc=0;
+		var bu ="";
+		var fbu = "";
+		for(i=0;i<=j.length-1;i++){
+			val = j[i];
+			bu = "  <button id='btn"+i+"' onclick='fs(this.id,this.value)' value='"+val+"'>"+val+"</button>  ";
+			fbu +=bu;
+            bc++
+           
+		}
+		s3.innerHTML = fbu.trim();
+    
                 
 }
 else if (selection.value === "hindi"){
+                answers="";
+                document.getElementById("correctans").innerHTML = ""
+    
+                finalsentence = "";
+    document.getElementById("s4").innerHTML = "";
+    document.getElementById("s5").innerHTML = "";
+    document.getElementById("s6").innerHTML = "";
+    document.getElementById("s7").innerHTML = "";
+    document.getElementById("s8").innerHTML = "";
+    document.getElementById("s9").innerHTML = "";
+    document.getElementById("s10").innerHTML = "";
+    
+    
                 document.getElementById("s2").innerHTML = "(select the buttons in proper order)"
                 document.getElementById("s1").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words"
- 
-                var r = Math.floor(Math.random()* hin.length);
-                var jumbled = hin[r][0];
-                var j = shuffle(jumbled);
-                
-                var b ="";
-                var bs = "";
-                for(i=0;i<=j.length-1;i++){
-                    val = j[i];
-                    b = "<button id='btn"+i+"' value='"+val+"'>"+val+"</button> &nbsp;&nbsp;";
-                    bs +=b;
-                }
-                s3.innerHTML = bs;
-                      
-         
+               r = Math.floor(Math.random()* hin.length);
+		var jumbled = hin[r][0];
+		 j = shuffle(jumbled);
+		 bc=0;
+    cc=0;
+		var bu ="";
+		var fbu = "";
+		for(i=0;i<=j.length-1;i++){
+			val = j[i];
+			bu = "  <button id='btn"+i+"'onclick='fs(this.id,this.value)' value='"+val+"'>"+val+"</button>  ";
+			fbu +=bu;
+            bc++;
+		}
+		s3.innerHTML = fbu.trim();
+	}
 
+else if (selection.value === "default"){
+       
+                   answers="";
+                document.getElementById("correctans").innerHTML = ""
                 
-}
-else {
-                document.getElementById("s2").innerHTML = ""
-                document.getElementById("s1").innerHTML = ""
-                
-                alert("Choose any language")
+                finalsentence = "";
+              document.getElementById("s1").innerHTML = "";
+    document.getElementById("s2").innerHTML = "";
+    document.getElementById("s3").innerHTML = "";
+                document.getElementById("s4").innerHTML = "";
+    document.getElementById("s5").innerHTML = "";
+    document.getElementById("s6").innerHTML = "";
+    document.getElementById("s7").innerHTML = "";
+    document.getElementById("s8").innerHTML = "";
+    document.getElementById("s9").innerHTML = "";
+    document.getElementById("s10").innerHTML = "";
+    
             }
 }

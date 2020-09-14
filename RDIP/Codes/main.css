@@ -5,7 +5,7 @@ body{
     background-color:#74B9FF;
     font-family:sans-serif;
 }
-#selection{
+#choose{
     padding: 3px;
     border: 2px solid black;
     width: 200px;
@@ -16,19 +16,7 @@ body{
     transform: translate(-50%, -50%);
 
 }
-#s3{
-    position: absolute;
-   width: 900px;
-   top: 55%;
-   left: 48%;
-   padding:10vh;
-   transform: translate(-50%, -50%);
-   font-size: 20px;
-   font-style: italic;
-   color: black;
-   font-family:  sans-serif;
 
-} 
 #s1{
     position: absolute;
     width: 900px;
@@ -50,3 +38,48 @@ body{
     color: white;
     font-family:  sans-serif;
 } 
+#s3{
+    position: absolute;
+   width: 900px;
+   top: 55%;
+   left: 48%;
+   padding:10vh;
+   transform: translate(-50%, -50%);
+   font-size: 20px;
+   font-style: italic;
+   color: black;
+   font-family:  sans-serif;
+
+} 
+#s4{
+    position: absolute;
+    width: 900px;
+    top: 60%;
+    left: 50%;
+  transform: translate(-50%, -50%);
+    font-size: 23px;
+    color: white;
+    font-family:  sans-serif;
+}
+#s5{
+    position: absolute;
+    width: 900px;
+    top: 65%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-style: italic;
+    color: black;
+    font-family:  sans-serif;
+} 
+#s6{
+    position: absolute;
+    width: 900px;
+    top: 70%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-style: italic;
+    color: black;
+    font-family:  sans-serif;
+}
