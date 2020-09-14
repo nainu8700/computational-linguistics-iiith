@@ -83,3 +83,14 @@ body{
     color: black;
     font-family:  sans-serif;
 }
+#s7{
+    position: absolute;
+    width: 900px;
+    top: 80%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-style: italic;
+    color: black;
+    font-family:  sans-serif;
+}

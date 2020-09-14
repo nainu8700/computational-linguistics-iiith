@@ -46,9 +46,13 @@ function fs(id,value){
 	document.getElementById(id).style.display = "none";
 	document.getElementById("s6").innerHTML = "<center><button id='reform'onclick='reformsen()''>Re-form the sentence</button></center>"
     cc++;
+    if(bc==cc){
+		document.getElementById("s7").innerHTML = "<center><button id='correctness''>Check the correctness</button></center>"
+    }
    
     
 }
+
 
 //reset option
 function reformsen(){
