@@ -11,7 +11,7 @@ body{
     width: 200px;
     font-size: 20px;
     position: absolute;
-    top: 20%;
+    top: 5%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -20,7 +20,7 @@ body{
 #s1{
     position: absolute;
     width: 900px;
-    top: 30%;
+    top: 10%;
     left: 50%;
   transform: translate(-50%, -50%);
     font-size: 23px;
@@ -30,7 +30,7 @@ body{
 #s2{
     position: absolute;
     width: 900px;
-    top: 40%;
+    top: 20%;
     left: 48%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -41,7 +41,7 @@ body{
 #s3{
     position: absolute;
    width: 900px;
-   top: 55%;
+   top: 30%;
    left: 48%;
    padding:10vh;
    transform: translate(-50%, -50%);
@@ -54,7 +54,7 @@ body{
 #s4{
     position: absolute;
     width: 900px;
-    top: 60%;
+    top: 40%;
     left: 50%;
   transform: translate(-50%, -50%);
     font-size: 23px;
@@ -64,7 +64,7 @@ body{
 #s5{
     position: absolute;
     width: 900px;
-    top: 65%;
+    top: 45%;
     left: 48%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -75,7 +75,7 @@ body{
 #s6{
     position: absolute;
     width: 900px;
-    top: 70%;
+    top: 50%;
     left: 48%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -86,7 +86,8 @@ body{
 #s7{
     position: absolute;
     width: 900px;
-    top: 80%;
+    top: 55%;
+    margin-top: 3vh;
     left: 48%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -97,7 +98,7 @@ body{
 #s8{
     position: absolute;
     width: 900px;
-    top: 85%;
+    top: 60%;
     left: 48%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -108,7 +109,7 @@ body{
 #s9{
     position: absolute;
     width: 900px;
-    top: 90%;
+    top: 65%;
     left: 48%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -119,8 +120,23 @@ body{
 #s10{
     position: absolute;
     width: 900px;
-    top: 95%;
+    top: 70%;
     left: 48%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-style: italic;
+    color: black;
+    font-family:  sans-serif;
+}
+
+
+#correctans{
+    position: absolute;
+    width: 900px;
+    top: 90%;
+    left: 48%;
+    padding:20vh;
+    padding:4vh;
     transform: translate(-50%, -50%);
     font-size: 20px;
     font-style: italic;

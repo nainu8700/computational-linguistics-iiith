@@ -67,11 +67,50 @@ for(let i=0;i<newArr.length;i++){
     }
 }
 document.getElementById('s9').innerHTML = "WRONG ANSWER";
-document.getElementById("s10").innerHTML = "<center><button id='showansbtn''>Get Correct Sentence</button></center>"
+document.getElementById("s10").innerHTML = "<center><button id='showansbtn' onclick='getcorrectsen()'>Get Correct Sentence</button></center>"
+}
+
+function getcorrectsen(){
+    
+    answers="";
+    document.getElementById("correctans").innerHTML = ""
+    var totalanswers = 0;
+	
+if (selection.value=='english'){
+		totalanswers = eng[r].length-1;
+		document.getElementById('s10').innerHTML = "<center><button id='showansbtn' onclick='hidesen()''>hide correct answer</button></center>"
+		for(i=0;i<=totalanswers;i++){
+			answers += "<center>"+eng[r][i]+"<br></center>"
+		}
+		document.getElementById("correctans").innerHTML = answers;
+	}
+    else if(selection.value=='hindi'){
+		totalanswers = hin[r].length-1;
+		document.getElementById('s10').innerHTML = "<center><button id='showansbtn' onclick='hidesen()''>hide correct answer</button></center>"
+		for(i=0;i<=totalanswers;i++){
+			answers += "<center>"+hin[r][i]+"<br></center>"
+		}
+		document.getElementById("correctans").innerHTML = answers;
+	}
+   
 }
 
 
-//reset option
+
+function hidesen(){
+	document.getElementById('s10').innerHTML = "<center><button id='showansbtn' onclick='toggle()'>Get Correct Sentence</button></center>"
+	document.getElementById("correctans").innerHTML = "";
+}
+
+function toggle(){
+    while(document.getElementById("correctans").innerHTML ==""){
+	
+		document.getElementById('s10').innerHTML = "<center><button id='showansbtn' onclick='hidesen()'>hide correct answer</button></center>"
+        document.getElementById("correctans").innerHTML = answers;
+	}
+}
+
+
 function reformsen(){
     for(i=0;i<=j.length-1;i++){
 		document.getElementById('btn'+i).style.display = "";
