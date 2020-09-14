@@ -24,13 +24,6 @@ var j;
 let selection = document.getElementById("choose");
 
 
-
-
-
-
-
-
-
 function shuffle(jumbled){
 	var jumble = jumbled.split(" ");
 	var i = jumble.length, temp, randomi;
@@ -51,14 +44,14 @@ function fs(id,value){
 	finalsentence += value + " ";
 	 document.getElementById("s5").innerHTML = finalsentence;
 	document.getElementById(id).style.display = "none";
-	document.getElementById("s6").innerHTML = "<center><button id='reform''>Re-form the sentence</button></center>"
+	document.getElementById("s6").innerHTML = "<center><button id='reform'onclick='reformsen()''>Re-form the sentence</button></center>"
     cc++;
    
     
 }
 
 //reset option
-function rs(){
+function reformsen(){
     for(i=0;i<=j.length-1;i++){
 		document.getElementById('btn'+i).style.display = "";
 	}
