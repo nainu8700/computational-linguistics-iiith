@@ -98,7 +98,7 @@ if (selection.value=='english'){
 
 
 function hidesen(){
-	document.getElementById('s10').innerHTML = "<center><button id='showansbtn' onclick='toggle()'>Get Correct Sentence</button></center>"
+	document.getElementById('s10').innerHTML = "<center><button id='showansbtn' onclick='toggle()'>Get Answers</button></center>"
 	document.getElementById("correctans").innerHTML = "";
 }
 
