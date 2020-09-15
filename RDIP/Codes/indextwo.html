@@ -19,21 +19,23 @@
 	<div class="middle"><h1 id="mainhead">Tokens and Types</h1>
 		<div class="innermiddle">
 		<ul id="innerul">
-			<button class="mainbtns" id="introbtn" onclick="return !!(clearfields() & introshow())"><img src="../../src/lab/images/introduction.jpg"><br>INTRODUCTION</button>
-			<button class="mainbtns" id="theorybtn" onclick="return !!(clearfields() & theoryshow())"><img src="../../src/lab/images/theory.jpg"><br>THEORY</button>
-			<button class="mainbtns" id="objectivebtn" onclick="return !!(clearfields() & objectiveshow())"><img src="../../src/lab/images/objective.jpg"><br>OBJECTIVE</button>
-			<button class="mainbtns" id="experimentbtn" onclick="return !!(clearfields() & experimentshow())"><img src="../../src/lab/images/simulation.jpg"><br>EXPERIMENT</button>
-			<button class="mainbtns" id="quizzesbtn" onclick="return !!(clearfields() & quizzesshow())"><img src="../../src/lab/images/quizzes.jpg"><br>QUIZZES</button>
-			<button class="mainbtns" id="procedurebtn" onclick="return !!(clearfields() & procedureshow())"><img src="../../src/lab/images/procedure.jpg"><br>PROCEDURE</button>
+			<h2 style="text-align:center">EXPERIMENT</h2><br>
 		</ul>
 		<div class="content" style="text-align:center;">
-			<p id="subheading">Introduction</p>
-			<p id="description">Tokens correspond to the total number of word counts in a text while type corresponds to the total count of unique words in a text.</p>
-			<br><br><img id='image1'  src = 'http://cl-iiith.vlabs.ac.in/exp3/Exp3/Exp3.jpg' alt = 'Image'>
-
+			<select id='corpus' onchange="run();">
+				<option value='select'>---Select a corpus---</option>
+				<option value='corpus1'>Corpus 1</option>
+				<option value='corpus2'>Corpus 2</option>
+				<option value='corpus3'>Corpus 3</option>
+			</select>
 
 		</div>
+		<p id="details" style="padding: 8vh;"></p>
+
+	
 	</div>
+	
 	</div>
+	
 </body>
 </html> 
