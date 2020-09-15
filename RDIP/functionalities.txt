@@ -1,0 +1,21 @@
+
+Present functionalities:
+
+1. We  can select the corpus from the dropdown menu.
+
+2. If either the  number of tokens(words) or types counted and written in input are 
+correct then right answer message  is displayed when clicked on submit.
+
+3. If either the  number of tokens(words) or types counted and written in input are 
+incorrect then wrong answer message  is displayed when clicked on submit.
+
+4. If Answer is correct then continue button is displayed and further same process 
+for ' all the tokens with the same 'root' word to be of the same type' is finded using snowball stemmer.
+
+
+
+ functionalities to be added :
+
+ 1.If either the  number of tokens(words) or types are wrong then there should be a re-attempt option.
+
+ 2. for all types and new types ,the words should get highlighted in the corpus.
