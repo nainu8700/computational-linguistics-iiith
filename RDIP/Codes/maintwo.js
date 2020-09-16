@@ -12,6 +12,8 @@ var corpus = [
   var description = document.getElementById('description');
   var details = document.getElementById('details');
   var result = document.getElementById('result');
+  var submit = document.getElementById('submit');
+  var newtype = document.getElementById('newtype');
   var a;
   var count;
   var ucount;
@@ -21,6 +23,9 @@ var corpus = [
     description.innerHTML = '';
     details.innerHTML = '';
     result.innerHTML = '';
+    newtype.innerHTML = '';
+    submits.innerHTML = '';
+    submit.innerHTML = '';
   }
   
 
@@ -41,7 +46,10 @@ var corpus = [
     if (a == 'corpus1') {
       details.innerHTML =
         corpus[0] +
-        '<br><br><center>Enter the number of tokens and types for the above corpus:<table cellspacing = "-2" style="text-align:center;"><tr><td>#tokens: </td><td><input type="text" id="token" size="5"></td></tr><tr><td>#types: </td><td><input type="text" id="type" size="5"></td></tr></table><br><button id="submit" value="Submit" onclick=" check()">Submit</button></center>';
+        '<br><br><center>Enter the number of tokens and types for the above corpus:<table cellspacing = "-2" style="text-align:center;"><tr><td>#tokens: </td><td><input type="text" id="token" size="5"></td></tr><tr><td>#types: </td><td><input type="text" id="type" size="5"></td></tr></table><br>';
+       
+       submit.innerHTML=
+       ' <button id="submit" value="Submit" onclick=" check()">Submit</button></center>';
         var p = /\w+/gi;
     var str = corpus[0].match(p);
     count = str.length; //*******************//
@@ -57,7 +65,9 @@ var corpus = [
     if (a == 'corpus2') {
       details.innerHTML =
         corpus[1] +
-        '<br><br><center>Enter the number of tokens and types for the above corpus:<table cellspacing = "-2" style="text-align:center;"><tr><td>#tokens: </td><td><input type="text" id="token" size="5"></td></tr><tr><td>#types: </td><td><input type="text" id="type" size="5"></td></tr></table><br><button id="submit" value="Submit" onclick="check()">Submit</button></center>';
+        '<br><br><center>Enter the number of tokens and types for the above corpus:<table cellspacing = "-2" style="text-align:center;"><tr><td>#tokens: </td><td><input type="text" id="token" size="5"></td></tr><tr><td>#types: </td><td><input type="text" id="type" size="5"></td></tr></table><br>';
+        submit.innerHTML=
+       ' <button id="submit" value="Submit" onclick=" check()">Submit</button></center>';
         var p = /\w+/gi;
         var str = corpus[1].match(p);
         count = str.length; //*******************//
@@ -71,8 +81,9 @@ var corpus = [
     if (a == 'corpus3') {
       details.innerHTML =
         corpus[2] +
-        '<br><br><center>Enter the number of tokens and types for the above corpus:<table cellspacing = "-2" style="text-align:center;"><tr><td>#tokens: </td><td><input type="text" id="token" size="5"></td></tr><tr><td>#types: </td><td><input type="text" id="type" size="5"></td></tr></table><br><button id="submit" value="Submit" onclick="check()">Submit</button></center>';
-
+        '<br><br><center>Enter the number of tokens and types for the above corpus:<table cellspacing = "-2" style="text-align:center;"><tr><td>#tokens: </td><td><input type="text" id="token" size="5"></td></tr><tr><td>#types: </td><td><input type="text" id="type" size="5"></td></tr></table><br>';
+        submit.innerHTML=
+        ' <button id="submit" value="Submit" onclick=" check()">Submit</button></center>';
         var pattern = /\w+/gi;
         var str = corpus[2].match(pattern);
         count = str.length; //*******************//
@@ -103,12 +114,20 @@ var corpus = [
     }
     if (count == tokens && uniquecount == types) {
       result.innerHTML =
-        "<center><font color='Green' style = 'font-size:20px'>Right answer</font><br><br><button id='continue'>Continue</button></center>";
+        "<center><font color='Green' style = 'font-size:20px'>Right answer</font><br><br><button id='continue'  onclick='stemmers()'>Continue</button></center>";
     } else {
       result.innerHTML =
         "<center><font color='Red' style = 'font-size:20px'>Wrong answer</font></center>";
     }
   }
 
-
+  function stemmers() {
+    result.innerHTML ='';
+    submit.innerHTML='';
+    newtype.innerHTML =
+      "<br><center>Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types.<br><br>#new types:<br><input type='text' id='newtypeinput'></center>";
+      submits.innerHTML =
+      "<center><button id='submit1' value='Submit'>Submit</button></center>";
+    
+  }
 
