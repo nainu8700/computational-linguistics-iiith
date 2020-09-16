@@ -11,12 +11,16 @@ var corpus = [
   var subheading = document.getElementById('subheading');
   var description = document.getElementById('description');
   var details = document.getElementById('details');
+  var result = document.getElementById('result');
   var a;
+  var count;
+  var ucount;
   
   function clearfields() {
     subheading.innerHTML = '';
     description.innerHTML = '';
     details.innerHTML = '';
+    result.innerHTML = '';
   }
   
 
@@ -32,24 +36,78 @@ var corpus = [
     a = '';
     a = document.getElementById('corpus').value;
     if (a == 'select') {
-      alert('Select a corpus');
+      alert('Select any  corpus from dropdown');
     }
     if (a == 'corpus1') {
       details.innerHTML =
         corpus[0] +
-        '<br><br><center>Enter the number of tokens and types for the above corpus:<table cellspacing = "-2" style="text-align:center;"><tr><td>#tokens: </td><td><input type="text" id="tokeninput" size="5"></td></tr><tr><td>#types: </td><td><input type="text" id="typeinput" size="5"></td></tr></table><br><button id="submit" value="Submit">Submit</button></center>';
-    }
+        '<br><br><center>Enter the number of tokens and types for the above corpus:<table cellspacing = "-2" style="text-align:center;"><tr><td>#tokens: </td><td><input type="text" id="token" size="5"></td></tr><tr><td>#types: </td><td><input type="text" id="type" size="5"></td></tr></table><br><button id="submit" value="Submit" onclick=" check()">Submit</button></center>';
+        var p = /\w+/gi;
+    var str = corpus[0].match(p);
+    count = str.length; //*******************//
+    var b1 = str.join(' ');
+    var b2 = b1.toLowerCase();
+    var b3 = b2.split(' ');
+    var uwords = new Set(b3);
+    uniquecount = uwords.size; //*******************//
+    result.innerHTML = '';
+    
+    
+      }
     if (a == 'corpus2') {
       details.innerHTML =
         corpus[1] +
-        '<br><br><center>Enter the number of tokens and types for the above corpus:<table cellspacing = "-2" style="text-align:center;"><tr><td>#tokens: </td><td><input type="text" id="tokeninput" size="5"></td></tr><tr><td>#types: </td><td><input type="text" id="typeinput" size="5"></td></tr></table><br><button id="submit" value="Submit">Submit</button></center>';
-    }
+        '<br><br><center>Enter the number of tokens and types for the above corpus:<table cellspacing = "-2" style="text-align:center;"><tr><td>#tokens: </td><td><input type="text" id="token" size="5"></td></tr><tr><td>#types: </td><td><input type="text" id="type" size="5"></td></tr></table><br><button id="submit" value="Submit" onclick="check()">Submit</button></center>';
+        var p = /\w+/gi;
+        var str = corpus[1].match(p);
+        count = str.length; //*******************//
+        var b1 = str.join(' ');
+        var b2 = b1.toLowerCase();
+        var b3 = b2.split(' ');
+        var uwords = new Set(b3);
+        uniquecount = uwords.size; //*******************//
+        result.innerHTML = '';
+      }
     if (a == 'corpus3') {
       details.innerHTML =
         corpus[2] +
-        '<br><br><center>Enter the number of tokens and types for the above corpus:<table cellspacing = "-2" style="text-align:center;"><tr><td>#tokens: </td><td><input type="text" id="tokeninput" size="5"></td></tr><tr><td>#types: </td><td><input type="text" id="typeinput" size="5"></td></tr></table><br><button id="submit" value="Submit">Submit</button></center>';
-    }
+        '<br><br><center>Enter the number of tokens and types for the above corpus:<table cellspacing = "-2" style="text-align:center;"><tr><td>#tokens: </td><td><input type="text" id="token" size="5"></td></tr><tr><td>#types: </td><td><input type="text" id="type" size="5"></td></tr></table><br><button id="submit" value="Submit" onclick="check()">Submit</button></center>';
 
+        var pattern = /\w+/gi;
+        var str = corpus[2].match(pattern);
+        count = str.length; //*******************//
+        var b1 = str.join(' ');
+        var b2 = b1.toLowerCase();
+        var b3 = b2.split(' ');
+        var uwords = new Set(b3);
+        uniquecount = uwords.size; //*******************//
+        result.innerHTML = '';
+
+  }
+  
+}
+
+  function check() {
+    var tokens = document.getElementById('token').value;
+    var types = document.getElementById('type').value;
+    if (count == tokens) {
+      document.getElementById('token').style.backgroundColor = 'Green';
+    } else {
+      document.getElementById('token').style.backgroundColor = 'Red';
+    }
+  
+    if (uniquecount == types) {
+      document.getElementById('type').style.backgroundColor = 'Green';
+    } else {
+      document.getElementById('type').style.backgroundColor = 'Red';
+    }
+    if (count == tokens && uniquecount == types) {
+      result.innerHTML =
+        "<center><font color='Green' style = 'font-size:20px'>Right answer</font><br><br><button id='continue'>Continue</button></center>";
+    } else {
+      result.innerHTML =
+        "<center><font color='Red' style = 'font-size:20px'>Wrong answer</font></center>";
+    }
   }
 
 
