@@ -6,7 +6,10 @@ var corpus = [
 
   ];
   
-
+  var stemmer = new Snowball('English');
+  stemmer.setCurrent('abbreviations');
+  stemmer.stem();
+  console.log(stemmer.getCurrent());
 
   var subheading = document.getElementById('subheading');
   var description = document.getElementById('description');
