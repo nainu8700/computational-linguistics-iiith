@@ -151,4 +151,5 @@ function stemtype(){
   s = new Set(s);
   s = Array.from(s);
   console.log(s);
+  alert(s.length);
 }
