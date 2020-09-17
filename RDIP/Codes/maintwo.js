@@ -33,12 +33,6 @@ var corpus = [
   
 
 
-  
-  function experimentshow() {
-    subheading.innerHTML = 'Experiment';
-    document.getElementById('image1').style.display = 'none';
-   
-  }
 
   function run() {
     a = '';
@@ -130,7 +124,31 @@ var corpus = [
     newtype.innerHTML =
       "<br><center>Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types.<br><br>#new types:<br><input type='text' id='newtypeinput'></center>";
       submits.innerHTML =
-      "<center><button id='submit1' value='Submit'>Submit</button></center>";
+      "<center><button id='submit1' value='Submit' onclick='stemtype();'>Submit</button></center>";
     
   }
 
+function stemtype(){
+  var str='';
+  if (a=='corpus1'){
+    str=corpus[0];
+  }
+  if (a=='corpus2'){
+    str=corpus[1];
+  }
+  if (a=='corpus3'){
+    str=corpus[2];
+  }
+  str = str.replace(/[^a-zA-Z ]/g, '');
+  str = str.toLowerCase();
+  var str1 = str.split(' ');
+  var s = [];
+  for (i = 0; i < str1.length; i++) {
+    stemmer.setCurrent(str1[i]);
+    stemmer.stem();
+    s[i] = stemmer.getCurrent();
+  }
+  s = new Set(s);
+  s = Array.from(s);
+  console.log(s);
+}
