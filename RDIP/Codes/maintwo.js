@@ -122,13 +122,14 @@ var corpus = [
     result.innerHTML ='';
     submit.innerHTML='';
     newtype.innerHTML =
-      "<br><center>Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types.<br><br>#new types:<br><input type='text' id='newtypeinput'></center>";
+      "<br><center>Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types.<br><br>#new types:<br><input type='text' id='new'></center>";
       submits.innerHTML =
       "<center><button id='submit1' value='Submit' onclick='stemtype();'>Submit</button></center>";
     
   }
 
 function stemtype(){
+  newcount = document.getElementById('new').value;
   var str='';
   if (a=='corpus1'){
     str=corpus[0];
@@ -152,4 +153,15 @@ function stemtype(){
   s = Array.from(s);
   console.log(s);
   alert(s.length);
+
+  compare(s.length)
+}
+
+function  compare(len){
+  if(len==newcount){
+    alert('Answer is correct')
+  }
+  else{
+    alert('Answer is not correct')
+  }
 }
