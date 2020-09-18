@@ -17,6 +17,7 @@ var corpus = [
   var result = document.getElementById('result');
   var submit = document.getElementById('submit');
   var newtype = document.getElementById('newtype');
+  var newresult = document.getElementById('newresult');
   var a;
   var count;
   var ucount;
@@ -29,6 +30,7 @@ var corpus = [
     newtype.innerHTML = '';
     submits.innerHTML = '';
     submit.innerHTML = '';
+    newresult.innerHTML = '';
   }
   
 
@@ -49,12 +51,12 @@ var corpus = [
        ' <button id="submit" value="Submit" onclick=" check()">Submit</button></center>';
         var p = /\w+/gi;
     var str = corpus[0].match(p);
-    count = str.length; //*******************//
+    count = str.length; 
     var b1 = str.join(' ');
     var b2 = b1.toLowerCase();
     var b3 = b2.split(' ');
     var uwords = new Set(b3);
-    uniquecount = uwords.size; //*******************//
+    uniquecount = uwords.size; 
     result.innerHTML = '';
     
     
@@ -65,14 +67,15 @@ var corpus = [
         '<br><br><center>Enter the number of tokens and types for the above corpus:<table cellspacing = "-2" style="text-align:center;"><tr><td>#tokens: </td><td><input type="text" id="token" size="5"></td></tr><tr><td>#types: </td><td><input type="text" id="type" size="5"></td></tr></table><br>';
         submit.innerHTML=
        ' <button id="submit" value="Submit" onclick=" check()">Submit</button></center>';
+       
         var p = /\w+/gi;
         var str = corpus[1].match(p);
-        count = str.length; //*******************//
+        count = str.length;
         var b1 = str.join(' ');
         var b2 = b1.toLowerCase();
         var b3 = b2.split(' ');
         var uwords = new Set(b3);
-        uniquecount = uwords.size; //*******************//
+        uniquecount = uwords.size; 
         result.innerHTML = '';
       }
     if (a == 'corpus3') {
@@ -144,10 +147,31 @@ function stemtype(){
   str = str.toLowerCase();
   var str1 = str.split(' ');
   var s = [];
+  var k=0;
   for (i = 0; i < str1.length; i++) {
-    stemmer.setCurrent(str1[i]);
-    stemmer.stem();
-    s[i] = stemmer.getCurrent();
+    if (
+      str1[i] == 'a' ||
+      str1[i] == 'the' ||
+      str1[i] == 'of' ||
+      str1[i] == 'to' ||
+      str1[i] == 'very' ||
+      str1[i] == 'does' ||
+      str1[i] == 'off' ||
+      str1[i] == 'me' ||
+      str1[i] == 'you' ||
+      str1[i] == 'up' ||
+      str1[i] == 'can' ||
+      str1[i] == 'than' ||
+      str1[i] == 'did'
+    ) {
+      continue;
+    } else {
+      stemmer.setCurrent(str1[i]);
+      stemmer.stem();
+      s[k] = stemmer.getCurrent();
+      k++;
+
+    }
   }
   s = new Set(s);
   s = Array.from(s);
@@ -159,9 +183,14 @@ function stemtype(){
 
 function  compare(len){
   if(len==newcount){
-    alert('Answer is correct')
+    document.getElementById('new').style.backgroundColor = 'Green';
+    newresult.innerHTML =
+    "<center><font color='Green' size='5px'>Right Answer</center>";
+    
   }
   else{
-    alert('Answer is not correct')
+    document.getElementById('new').style.backgroundColor = 'Red';
+    newresult.innerHTML =
+      "<center><font color='Red' size='5px'>Wrong Answer</center>";
   }
 }
