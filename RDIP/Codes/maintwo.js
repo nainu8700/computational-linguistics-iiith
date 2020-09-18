@@ -48,7 +48,7 @@ var corpus = [
         '<br><br><center>Enter the number of tokens and types for the above corpus:<table cellspacing = "-2" style="text-align:center;"><tr><td>#tokens: </td><td><input type="text" id="token" size="5"></td></tr><tr><td>#types: </td><td><input type="text" id="type" size="5"></td></tr></table><br>';
        
        submit.innerHTML=
-       ' <button id="submit" value="Submit" onclick=" check()">Submit</button></center>';
+       ' <button id="submit" value="Submit" onclick=" check()" style="background:#24ae60;color:white;padding:2vh;">Submit</button></center>';
         var p = /\w+/gi;
     var str = corpus[0].match(p);
     count = str.length; 
@@ -66,7 +66,7 @@ var corpus = [
         corpus[1] +
         '<br><br><center>Enter the number of tokens and types for the above corpus:<table cellspacing = "-2" style="text-align:center;"><tr><td>#tokens: </td><td><input type="text" id="token" size="5"></td></tr><tr><td>#types: </td><td><input type="text" id="type" size="5"></td></tr></table><br>';
         submit.innerHTML=
-       ' <button id="submit" value="Submit" onclick=" check()">Submit</button></center>';
+       ' <button id="submit" value="Submit" onclick=" check()" style="background:#24ae60;color:white;padding:2vh;">Submit</button></center>';
        
         var p = /\w+/gi;
         var str = corpus[1].match(p);
@@ -83,7 +83,7 @@ var corpus = [
         corpus[2] +
         '<br><br><center>Enter the number of tokens and types for the above corpus:<table cellspacing = "-2" style="text-align:center;"><tr><td>#tokens: </td><td><input type="text" id="token" size="5"></td></tr><tr><td>#types: </td><td><input type="text" id="type" size="5"></td></tr></table><br>';
         submit.innerHTML=
-        ' <button id="submit" value="Submit" onclick=" check()">Submit</button></center>';
+        ' <button id="submit" value="Submit" onclick=" check()"  style="background:#24ae60;color:white;padding:2vh;">Submit</button></center>';
         var pattern = /\w+/gi;
         var str = corpus[2].match(pattern);
         count = str.length; //*******************//
@@ -114,7 +114,7 @@ var corpus = [
     }
     if (count == tokens && uniquecount == types) {
       result.innerHTML =
-        "<center><font color='Green' style = 'font-size:20px'>Right answer</font><br><br><button id='continue'  onclick='stemmers()'>Continue</button></center>";
+        "<center><font color='Green' style = 'font-size:20px'>Right answer</font><br><br><button id='continue'  style='background:#2475B0;color:white;padding:2vh;' onclick='stemmers()' >Continue</button></center>";
     } else {
       result.innerHTML =
         "<center><font color='Red' style = 'font-size:20px'>Wrong answer</font></center>";
@@ -127,7 +127,7 @@ var corpus = [
     newtype.innerHTML =
       "<br><center>Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types.<br><br>#new types:<br><input type='text' id='new'></center>";
       submits.innerHTML =
-      "<center><button id='submit1' value='Submit' onclick='stemtype();'>Submit</button></center>";
+      "<center><button id='submit1' value='Submit' onclick='stemtype();' style='background:#EA7773;color:white;padding:2vh;'>Submit</button></center>";
     
   }
 
