@@ -64,7 +64,7 @@ var corpus = [
     }
     if (x == 'english') {
       langcontent.innerHTML =
-        "<center><select id='eng'><option value='engselect'>---Select a sentence---</option><option value='english1'>" +
+        "<center><select id='eng' onchange='viewtable(this.id)'><option value='engselect'>---Select a sentence---</option><option value='english1'>" +
         corpus[0][0] +
         "</option><option value='english2'>" +
         corpus[0][1] +
@@ -78,7 +78,7 @@ var corpus = [
     }
     if (x == 'hindi') {
       langcontent.innerHTML =
-        "<center><select id='hin'><option value='hinselect'>---Select a sentence---</option><option value='hindi1'>" +
+        "<center><select id='hin' onchange='viewtable(this.id)'><option value='hinselect' >---Select a sentence---</option><option value='hindi1'>" +
         corpus[1][0] +
         "</option><option value='hindi2'>" +
         corpus[1][1] +
@@ -93,7 +93,80 @@ var corpus = [
   }
 
 
+  
+  function viewtable(id) {
+    contenttable.innerHTML =
+      "<center><br><i><font color='Blue'>Select the POS tag for corresponding words</font></i><br></center>";
+    var sentence = '';
+    if (id == 'eng') {
+      sentence = document.getElementById(id).value;
+      if (sentence == 'english1') {
+        tables(corpus[0][0]);
+      }
+      if (sentence == 'english2') {
+        tables(corpus[0][1]);
+      }
+      if (sentence == 'english3') {
+        tables(corpus[0][2]);
+      }
+      if (sentence == 'english4') {
+        tables(corpus[0][3]);
+      }
+      if (sentence == 'english5') {
+        tables(corpus[0][4]);
+      }
+    }
+    if (id == 'hin') {
+      sentence = document.getElementById(id).value;
+      if (sentence == 'hindi1') {
+        tables(corpus[1][0]);
+      }
+      if (sentence == 'hindi2') {
+        tables(corpus[1][1]);
+      }
+      if (sentence == 'hind3') {
+        tables(corpus[1][2]);
+      }
+      if (sentence == 'hindi4') {
+        tables(corpus[1][3]);
+      }
+      if (sentence == 'hindi5') {
+        tables(corpus[1][4]);
+      }
+    }
 
+}
+
+
+function tables( corpusstring){
+    contenttable.innerHTML = '';
+    var rows = '';
+    var corpusS1 = '';
+    corpusS1 = corpusstring.split(' ');
+    if (x == 'english') {
+      rows = '';
+      for (i = 0; i < corpusS1.length; i++) {
+        rows +=
+          '<tr><td>' +
+          corpusS1[i] +
+          "</td><td><select><option value = 'Noun'>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Determiner'>Determiner</option><option value = 'Preposition'>Preposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
+      }
+    } else if (x == 'hindi') {
+      rows = '';
+      for (i = 0; i < corpusS1.length; i++) {
+        rows +=
+          '<tr><td>' +
+          corpusS1[i] +
+          "</td><td><select><option value = 'Noun'>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Postposition'>Postposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
+      }
+    }
+    contenttable.innerHTML =
+      '<center><table><tr><th>LEXICON</th><th>POS</th><th></th><th></th></tr><tr></td></tr>' +
+      rows +
+      '</table></center>';
+
+
+}
   
   function experimentshow() {
     subheading.innerHTML = 'Experiment';
