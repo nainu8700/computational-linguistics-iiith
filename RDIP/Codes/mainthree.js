@@ -56,11 +56,51 @@ var corpus = [
       '<br><hr><br>The objective of this experiment is to test the knowledge of basic part of speech of words as they appear in a sentence.<br><br><hr>';
   }
   
- 
+  function dropdownchange() {
+    x = '';
+    x = document.getElementById('lang').value;
+    if (x == 'select') {
+      alert('Select language');
+    }
+    if (x == 'english') {
+      langcontent.innerHTML =
+        "<center><select id='eng'><option value='engselect'>---Select a sentence---</option><option value='english1'>" +
+        corpus[0][0] +
+        "</option><option value='english2'>" +
+        corpus[0][1] +
+        "</option><option value='english3'>" +
+        corpus[0][2] +
+        "</option><option value='english4'>" +
+        corpus[0][3] +
+        "</option><option value='english5'>" +
+        corpus[0][4] +
+        '</option></select></center>';
+    }
+    if (x == 'hindi') {
+      langcontent.innerHTML =
+        "<center><select id='hin'><option value='hinselect'>---Select a sentence---</option><option value='hindi1'>" +
+        corpus[1][0] +
+        "</option><option value='hindi2'>" +
+        corpus[1][1] +
+        "</option><option value='hindi3'>" +
+        corpus[1][2] +
+        "</option><option value='hindi4'>" +
+        corpus[1][3] +
+        "</option><option value='hindi5'>" +
+        corpus[1][4] +
+        '</option></select></center>';
+    }
+  }
+
+
+
   
   function experimentshow() {
     subheading.innerHTML = 'Experiment';
     document.getElementById('image1').style.display = 'none';
+    description.innerHTML =
+      "<center><select id='lang' onchange = 'dropdownchange()'><option value='select'>---Select Language---</option><option value='english'>English</option><option value='hindi'>Hindi</option></select></center>";
+
 }
   
   function quizzesshow() {
