@@ -1,0 +1,26 @@
+Present functionalities:
+
+1. We  can select the language  from the dropdown menu.
+
+2.  We  can select the corpus from the dropdown menu.
+
+3.for each word in corpus we get a table where default POS is noun 
+
+
+4. For each lexicon we have to choose a pos and click on submit button that displays whether answer is correct or not.
+
+
+5.  If all your POS tags are correct, and the third column is filled with all green ticks, the experiment is over. But if, any of the rows of the third column are filled with a red cross, 
+a button is displayed saying “Get Answer” wherein if clicked.
+
+6. we are using POS tagger library in this experiment.
+
+
+
+
+ functionalities to be added :
+
+ 1.In  hindi language the POS dropdown values noun,pronoun etc should appear in hindi language.
+
+2.By selecting value for all the lexicon the submit button should be enabled and default value for POS should be none.
+
