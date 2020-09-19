@@ -33,6 +33,8 @@ var corpus = [
     submit.innerHTML = '';
     btns.innerHTML = '';
   }
+
+
   
   function introshow() {
     description.style.fontSize = '15px';
@@ -127,7 +129,7 @@ var corpus = [
       if (sentence == 'hindi2') {
         tables(corpus[1][1]);
       }
-      if (sentence == 'hind3') {
+      if (sentence == 'hindi3') {
         tables(corpus[1][2]);
       }
       if (sentence == 'hindi4') {
