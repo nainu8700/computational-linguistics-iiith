@@ -93,6 +93,7 @@ var corpus = [
   }
 
 
+  //table  view on language and sentence choosed with lexicon and POS column
   
   function viewtable(id) {
     contenttable.innerHTML =
@@ -136,7 +137,7 @@ var corpus = [
     }
 
 }
-
+// create table
 
 function tables( corpusstring){
     contenttable.innerHTML = '';
