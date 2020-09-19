@@ -574,7 +574,7 @@ function comparison() {
   if (flag != strarray.length) {
     f1++;
     getans.innerHTML =
-      "<br><center><button id='getans' onclick='gettheanswers()'>Get Answers</button></center>";
+      "<br><center><button id='getans'  onclick='gettheanswers()'>Get Answers</button></center>";
   } else {
     if (f1 == 0) getans.innerHTML = '';
   }
