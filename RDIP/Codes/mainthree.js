@@ -22,6 +22,7 @@ var corpus = [
   var langcontent = document.getElementById('langcontent');
   var contenttable = document.getElementById('contenttable');
   var submit = document.getElementById('submit');
+  var btns = document.getElementById('btns');
   var x;
   
   function clearfields() {
@@ -30,6 +31,7 @@ var corpus = [
     langcontent.innerHTML = '';
     contenttable.innerHTML = '';
     submit.innerHTML = '';
+    btns.innerHTML = '';
   }
   
   function introshow() {
@@ -165,6 +167,7 @@ function tables( corpusstring){
       '<center><table><tr><th>LEXICON</th><th>POS</th><th></th><th></th></tr><tr></td></tr>' +
       rows +
       '</table></center>';
+      btns.innerHTML = "<center><br><button id='submit'>Submit</button></center>";
 
 
 }
